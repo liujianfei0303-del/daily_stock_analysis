@@ -1,0 +1,36 @@
+# 核心配置：DeepSeek + QQ邮箱 + 多股票分析
+llm:
+  provider: "openai"          # DeepSeek兼容OpenAI接口，固定值
+  model: "deepseek-chat"      # 全小写，不要改大小写
+  temperature: 0.1
+  api_key: "${{ secrets.DEEPSEEK_API_KEY }}"
+  base_url: "${{ secrets.DEEPSEEK_BASE_URL }}"
+  proxy: ""                   # 国内直连，留空
+
+notification:
+  email:
+    enable: true
+    smtp_host: "smtp.qq.com"
+    smtp_port: 465
+    sender: "${{ secrets.EMAIL_SENDER }}"
+    password: "${{ secrets.EMAIL_PASSWORD }}"
+    receiver: "${{ secrets.EMAIL_SENDER }}"
+  wecom:
+    enable: false
+  telegram:
+    enable: false
+
+stock:
+  a_share: ["600519 贵州茅台","000858 五粮液"]
+  h_share: []
+  us_share: []
+
+data:
+  provider: "akshare"
+  tushare_token: ""
+
+analysis:
+  technical: true
+  fundamental: true
+  news: true
+  language: "zh"
