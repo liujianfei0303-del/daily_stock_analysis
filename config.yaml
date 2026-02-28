@@ -3,8 +3,8 @@ llm:
   provider: "openai"          # DeepSeek兼容OpenAI接口，固定值
   model: "deepseek-chat"      # 全小写，不要改大小写
   temperature: 0.1
-  api_key: "${{ secrets.DEEPSEEK_API_KEY }}"
-  base_url: "${{ secrets.DEEPSEEK_BASE_URL }}"
+  api_key: "${{ secrets.OPENAI_API_KEY }}"
+  base_url: "${{ secrets.OPENAI_BASE_URL }}"
   proxy: ""                   # 国内直连，留空
 
 notification:
